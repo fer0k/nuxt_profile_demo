@@ -1,4 +1,5 @@
 import colors from 'vuetify/es5/util/colors'
+import ru from 'vuetify/es5/locale/ru'
 
 export default {
   /*
@@ -63,6 +64,10 @@ export default {
   ** See https://axios.nuxtjs.org/options
   */
   axios: {},
+  router: {
+    middleware: ['check-auth'],
+    mode: 'history'
+  },
   /*
   ** vuetify module configuration
   ** https://github.com/nuxt-community/vuetify-module
@@ -70,7 +75,7 @@ export default {
   vuetify: {
     customVariables: ['~/assets/variables.scss'],
     theme: {
-      dark: true,
+      dark: false,
       themes: {
         dark: {
           primary: colors.blue.darken2,
@@ -82,6 +87,10 @@ export default {
           success: colors.green.accent3
         }
       }
+    },
+    lang: {
+      locales: { ru },
+      current: 'ru'
     }
   },
   /*
